@@ -29,6 +29,15 @@ Default behavior is manual approval. Treat `.ai-review/effective-config.env` as 
 2. `.codex-review.yml`
 3. built-in defaults
 
+If the project has no `.codex-review.yml` and the user passes no command arguments, use these defaults:
+
+```yaml
+mode: ask
+review_scope: uncommitted
+max_fix_rounds: 1
+auto_fix_severities: []
+```
+
 Configuration meanings:
 
 - `mode: ask` means always ask before fixing.

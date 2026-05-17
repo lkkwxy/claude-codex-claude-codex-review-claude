@@ -7,6 +7,10 @@ REVIEW_FILE="${OUTPUT_DIR}/codex-review.md"
 LOG_FILE="${OUTPUT_DIR}/codex-review.log"
 EFFECTIVE_CONFIG_FILE="${OUTPUT_DIR}/effective-config.env"
 CONFIG_FILE=".codex-review.yml"
+DEFAULT_MODE="ask"
+DEFAULT_REVIEW_SCOPE="uncommitted"
+DEFAULT_MAX_FIX_ROUNDS="1"
+DEFAULT_AUTO_FIX_SEVERITIES="[]"
 MODE_ARG=""
 REVIEW_SCOPE_ARG=""
 MAX_FIX_ROUNDS_ARG=""
@@ -151,10 +155,10 @@ if ! command -v codex >/dev/null 2>&1; then
   fail "codex CLI is not available on PATH."
 fi
 
-MODE="${MODE_ARG:-$(read_config_value "mode" "ask")}"
-REVIEW_SCOPE="${REVIEW_SCOPE_ARG:-$(read_config_value "review_scope" "uncommitted")}"
-MAX_FIX_ROUNDS="${MAX_FIX_ROUNDS_ARG:-$(read_config_value "max_fix_rounds" "1")}"
-AUTO_FIX_SEVERITIES="${AUTO_FIX_SEVERITIES_ARG:-$(read_config_value "auto_fix_severities" "[]")}"
+MODE="${MODE_ARG:-$(read_config_value "mode" "$DEFAULT_MODE")}"
+REVIEW_SCOPE="${REVIEW_SCOPE_ARG:-$(read_config_value "review_scope" "$DEFAULT_REVIEW_SCOPE")}"
+MAX_FIX_ROUNDS="${MAX_FIX_ROUNDS_ARG:-$(read_config_value "max_fix_rounds" "$DEFAULT_MAX_FIX_ROUNDS")}"
+AUTO_FIX_SEVERITIES="${AUTO_FIX_SEVERITIES_ARG:-$(read_config_value "auto_fix_severities" "$DEFAULT_AUTO_FIX_SEVERITIES")}"
 EXTRA_INSTRUCTIONS_TEXT="${EXTRA_INSTRUCTIONS[*]:-}"
 
 case "$MODE" in

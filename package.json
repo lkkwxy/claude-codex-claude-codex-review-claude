@@ -1,0 +1,21 @@
+{
+  "name": "claude-codex-code-review",
+  "version": "0.1.0",
+  "description": "Install a Claude Code /codex-review command that runs Codex CLI review and lets Claude apply selected fixes.",
+  "license": "MIT",
+  "bin": {
+    "claude-codex-code-review": "bin/codex-review"
+  },
+  "files": [
+    ".claude/commands/codex-review.md",
+    ".codex-review.yml",
+    "bin/codex-review",
+    "scripts/codex-review.sh"
+  ],
+  "scripts": {
+    "test": "bash -n scripts/codex-review.sh scripts/install.sh bin/codex-review"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

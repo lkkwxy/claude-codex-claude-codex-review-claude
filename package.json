@@ -1,6 +1,6 @@
 {
   "name": "claude-codex-code-review",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Install a Claude Code /codex-review command that runs Codex CLI review and lets Claude apply selected fixes.",
   "license": "MIT",
   "bin": {

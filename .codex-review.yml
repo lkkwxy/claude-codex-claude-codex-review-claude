@@ -1,0 +1,4 @@
+mode: ask
+review_scope: uncommitted
+max_fix_rounds: 1
+auto_fix_severities: []
